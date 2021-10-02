@@ -29,6 +29,7 @@ INSERT INTO jugadores VALUES (1, 'Miguel', 'mimara');
 INSERT INTO jugadores VALUES (2, 'Laia', 'telecos');
 INSERT INTO jugadores VALUES (3, 'Maria', 'telematica');
 INSERT INTO jugadores VALUES (4, 'Biel', 'aeros');
+INSERT INTO jugadores VALUES (5, 'Juan', '1234');
 
 INSERT INTO partidas VALUES (1, '28/09/2021', 'Miguel',900);
 INSERT INTO partidas VALUES (2, '28/09/2021', 'Laia', 450);

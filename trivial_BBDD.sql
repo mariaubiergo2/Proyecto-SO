@@ -1,19 +1,20 @@
-DROP DATABASE IF EXISTS videojuego;
-CREATE DATABASE videojuego;
+DROP DATABASE IF EXISTS trivial_BBDD;
+CREATE DATABASE trivial_BBDD;
+USE trivial_BBDD;
 
-USE videojuego;
 CREATE TABLE jugadores (
 	id INT not NULL, 
 	PRIMARY KEY(id),
 	nombre VARCHAR(25),
-	contrasenya VARCHAR(20)
+	contrasenya VARCHAR(20),
+	mail VARCHAR(100)
 )ENGINE = InnoDB;
 
 CREATE TABLE partidas (
 	id INT not NULL,
 	PRIMARY KEY(id),
 	fecha VARCHAR(10),
-	ganador VARCHAR(25),
+	ganador VARCHAR(25) DEFAULT '-',
 	duracion INT not NULL
 )ENGINE = InnoDB;
 
@@ -22,14 +23,13 @@ CREATE TABLE registro (
 	FOREIGN KEY(idJ) REFERENCES jugadores(id),
 	idP INT,
 	FOREIGN KEY(idP) REFERENCES partidas(id),
-	duracion INT not NULL
+	puntos INT not NULL
 )ENGINE = InnoDB;
 
-INSERT INTO jugadores VALUES (1, 'Miguel', 'mimara');
-INSERT INTO jugadores VALUES (2, 'Laia', 'telecos');
-INSERT INTO jugadores VALUES (3, 'Maria', 'telematica');
-INSERT INTO jugadores VALUES (4, 'Biel', 'aeros');
-INSERT INTO jugadores VALUES (5, 'Juan', '1234');
+INSERT INTO jugadores VALUES (1, 'Miguel', 'mimara','miguel.valero@upc.edu');
+INSERT INTO jugadores VALUES (2, 'Laia', 'telecos','laia.costa.cid@estudiantat.upc.edu');
+INSERT INTO jugadores VALUES (3, 'Maria', 'telematica','maria.ubiergo@estudiantat.upc.edu');
+INSERT INTO jugadores VALUES (4, 'Biel', 'aeros','biel.gomez@estudiantat.upc.edu');
 
 INSERT INTO partidas VALUES (1, '28/09/2021', 'Miguel',900);
 INSERT INTO partidas VALUES (2, '28/09/2021', 'Laia', 450);
